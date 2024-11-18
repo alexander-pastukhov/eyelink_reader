@@ -2,3 +2,4 @@ sphinx
 sphinx_copybutton
 numpydoc
 myst_parser
+sphinx-rtd-theme
