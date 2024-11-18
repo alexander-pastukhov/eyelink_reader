@@ -1,2 +1,4 @@
 sphinx
 sphinx_copybutton
+numpydoc
+myst_parser
