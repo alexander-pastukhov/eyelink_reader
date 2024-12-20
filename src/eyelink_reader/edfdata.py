@@ -405,7 +405,7 @@ class EDF_FEVENT(Structure):
             # special case of LSTRING
             if getattr(self, field_name) and getattr(self, field_name).contents.len > 0 and len(getattr(self, field_name).contents.c) > 0:
                 try:
-                    message_str = getattr(self, field_name).contents.c.decode("UTF-8")
+                    message_str = getattr(self, field_name).contents.c.decode("latin-1")
                 except UnicodeDecodeError:
                     message_str = ""
                 return message_str
