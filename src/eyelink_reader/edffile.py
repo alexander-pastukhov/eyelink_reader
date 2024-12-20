@@ -339,6 +339,8 @@ class EDFFile:
         edfapi_filename = "edfapi"
         if platform.system() == "Windows" and platform.architecture()[0] == "64bit":
             edfapi_filename = "edfapi64"
+        elif platform.system() == "Linux":
+            edfapi_filename = "libedfapi.so"
 
         paths_to_try = []
         # 1) use path provided as a parameter
@@ -361,7 +363,7 @@ class EDFFile:
         elif platform.system() == "Darwin":
             paths_to_try.append("/Library/Frameworks/")
         elif platform.system() == "Linux":
-            pass # no specific path
+            paths_to_try.insert(0,"/usr/lib/x86_64-linux-gnu/")
         else:
             raise ImportError("EDF API libary is not available for this platform.")
 
